@@ -1,5 +1,9 @@
 # Getting started
 
+### What is Arcee?
+
+Arcee is a sophisticated text generation platform that harnesses the power of DALMs, offering users the capability to create text that's finely tuned to specific domains such as PubMed and Patent literature. The DALMs understand the nuances and terminologies of these specialized fields, enabling the generation of content that is not just coherent but also domain-appropriate.
+
 ## Arcee DALMs
 
 ### Installation

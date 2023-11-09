@@ -1,6 +1,8 @@
 # Table of contents
 
-* [README](README.md)
-  * [Getting started](readme/getting-started.md)
-  * [Train and Deploy DALMs](readme/train-and-deploy-dalms.md)
-  * [Contributing](readme/contributing.md)
+* [💜 About Arcee](README.md)
+  * [Getting started](about-arcee/getting-started.md)
+  * [Train and Deploy DALMs](about-arcee/train-and-deploy-dalms.md)
+  * [Contributing](about-arcee/contributing.md)
+* [🚀 Integrations](integrations.md)
+* [⛓ Arcee<>Langchain](arcee-less-than-greater-than-langchain.md)
