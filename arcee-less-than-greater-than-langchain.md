@@ -39,7 +39,6 @@ Arcee offers flexibility in configuration, allowing users to adjust parameters s
 arcee = Arcee(
     model="DALM-Patent",
     arcee_api_url="https://custom-api.arcee.ai",
-    arcee_app_url="https://custom-app.arcee.ai",
     model_kwargs={
         "size": 5,
         "filters": [{"field_name": "document", "filter_type": "fuzzy_search", "value": "Einstein"}],

@@ -6,3 +6,4 @@
   * [Contributing](about-arcee/contributing.md)
 * [🚀 Integrations](integrations.md)
 * [⛓ Arcee<>Langchain](arcee-less-than-greater-than-langchain.md)
+* [API docs](api-docs.md)
