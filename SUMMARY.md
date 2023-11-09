@@ -8,3 +8,5 @@
   * [⛓ Arcee<>Langchain](integrations/arcee-less-than-greater-than-langchain.md)
 * [API docs](api-docs/README.md)
   * [🔗 APIs](api-docs/apis.md)
+* [Cookbooks](cookbooks/README.md)
+  * [E2ERAG Cookbook](cookbooks/e2erag-cookbook.md)
