@@ -38,7 +38,6 @@ Arcee offers flexibility in configuration, allowing users to adjust parameters s
 ```python
 arcee = Arcee(
     model="DALM-Patent",
-    arcee_api_url="https://custom-api.arcee.ai",
     model_kwargs={
         "size": 5,
         "filters": [{"field_name": "document", "filter_type": "fuzzy_search", "value": "Einstein"}],
@@ -119,8 +118,6 @@ Customize the configuration based on your needs. Set the API URLs and default mo
 ```python
 arcee = Arcee(
     model="DALM-PubMed",
-    arcee_api_url="https://custom-api.arcee.ai",
-    arcee_app_url="https://custom-app.arcee.ai",
     model_kwargs={
         "size": 10,  # The number of documents to inform the generation
         "filters": [
