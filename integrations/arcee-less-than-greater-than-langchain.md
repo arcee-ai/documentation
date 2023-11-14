@@ -28,13 +28,17 @@ Arcee seamlessly integrates with Langchain to provide enhanced text generation u
     arcee = Arcee(model="DALM-your_domain", arcee_api_key="ARCEE-API-KEY")
     ```
 
+For this cookbook, we'll be using `DALM-PubMed`, you can train your own DALMs using our [DALM toolkit](https://github.com/arcee-ai/DALM)!
+
+***
+
 ### Configuration
 
-With Arcee, you can customize settings such as API URLs and model arguments:
+With Arcee+Langchain, you can customize settings such as API URLs and model arguments:
 
 ```python
 arcee = Arcee(
-    model="DALM-Patent",
+    model="DALM-PubMed",
     model_kwargs={
         "size": 5,
         "filters": [
@@ -96,36 +100,21 @@ from langchain.retrievers import ArceeRetriever
 
 retriever = ArceeRetriever(model="DALM-PubMed", arcee_api_key="ARCEE-API-KEY")
 documents = retriever.get_relevant_documents(query="Neurobiology", size=5)
-for doc in documents:
-    print(doc.get('title'))
 ```
 
 ### Combining Retrieval and Generation
 
 Use the `ArceeRetriever` class to inform the generation process with retrieved documents, creating enriched content:
 
+{% hint style="info" %}
+Note: while using `arcee.generate,` pass your prompts as a list.
+{% endhint %}
+
 ```python
 # Retrieve documents with ArceeRetriever
 documents = retriever.get_relevant_documents(query="Impact of AI on healthcare", size=5)
 
 # Generate informed text with Arcee
-response = arcee.generate(prompt, context_documents=documents)
+response = arcee.generate([prompt], context_documents=documents)
 print(response)
-```
-
-### Using Arcee with Agents
-
-Create an Agent with Arcee at its core for intelligent task handling:
-
-```python
-from langchain.agents import initialize_agent
-from langchain.llms import Arcee
-
-# Initialize Arcee
-arcee = Arcee(model="DALM-PubMed", arcee_api_key="ARCEE-API-KEY")
-
-# Initialize the agent
-agent = initialize_agent(agent_type="Zero-Shot", llm=arcee, verbose=True)
-result = agent.run("Explain the developments in bioinformatics.")
-print(result)
 ```
