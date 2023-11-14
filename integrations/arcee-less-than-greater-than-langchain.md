@@ -1,12 +1,6 @@
----
-description: >-
-  Introducing the Arcee+Langchain Integration: Leverage Domain Adapted Language
-  Models for Enhanced Text Generation
----
-
 # ⛓ Arcee<>Langchain
 
-## Integrating Arcee+Langchain: Domain Adapted Language Models for Enhanced Text Generation
+## Enhancing Models with Domain Expertise: The Arcee+Langchain Solution for Specialized Language Models
 
 ### Introduction
 
@@ -44,7 +38,11 @@ arcee = Arcee(
     model_kwargs={
         "size": 5,
         "filters": [
-            {"field_name": "document", "filter_type": "fuzzy_search", "value": "innovation"}
+            {
+            "field_name": "document", 
+            "filter_type": "fuzzy_search", 
+            "value": "innovation"
+            }
         ]
     }
 )
@@ -52,14 +50,39 @@ arcee = Arcee(
 
 Adjust these parameters according to your domain-specific needs.
 
+Arguments:
+
+* field\_name: The field to filter on. Can be 'document' or 'name' to filter on your document's raw text or title Any other field will be presumed to be a metadata field you included when uploading your context data&#x20;
+* Select between 'fuzzy\_search' for a flexible match allowing variance within the target field, and 'strict\_search' for a precise match requiring the exact term to appear in the field. 'fuzzy\_search' can identify related terms even when the exact match is absent, while 'strict\_search' ensures the specific term is present, but does not require an exact phrase match.
+* value: The actual value to search for in the context data/metadata
+
+{% hint style="info" %}
+You invoke the model even without model\_kwargs.
+{% endhint %}
+
+```python
+from langchain.llms import Arcee
+
+# Create an instance of the Arcee class
+arcee = Arcee(
+    model="DALM-PubMed",
+    arcee_api_key="ARCEE-API-KEY" # if not already set in the environment
+)
+```
+
 ### Generating Text with Contextual Awareness
 
 Arcee enables text generation enriched with contextual depth:
 
 ```python
-prompt = "Explore the role of AI in renewable energy advances."
-response = arcee.generate(prompt, size=10, filters=[
-    {"field_name": "document", "filter_type": "fuzzy_search", "value": "solar energy"}
+prompt = "Explore the role of AI in neuroscience."
+response = arcee.generate(prompt, size=10, 
+        filters=[
+            {
+            "field_name": "document", 
+            "filter_type": "fuzzy_search", 
+            "value": "solar energy"
+            }
 ])
 print(response)
 ```
@@ -72,7 +95,7 @@ ArceeRetriever complements the text generation by retrieving contextual document
 from langchain.retrievers import ArceeRetriever
 
 retriever = ArceeRetriever(model="DALM-PubMed", arcee_api_key="ARCEE-API-KEY")
-documents = retriever.get_relevant_documents(query="Neural Networks", size=5)
+documents = retriever.get_relevant_documents(query="Neurobiology", size=5)
 for doc in documents:
     print(doc.get('title'))
 ```
