@@ -1,12 +1,8 @@
 # Table of contents
 
-* [💜 About Arcee](README.md)
-  * [Getting started](about-arcee/getting-started.md)
-  * [Train and Deploy DALMs](about-arcee/train-and-deploy-dalms.md)
-  * [Contributing](about-arcee/contributing.md)
-* [🚀 Integrations](integrations/README.md)
-  * [⛓ Arcee<>Langchain](integrations/arcee-less-than-greater-than-langchain.md)
-* [API docs](api-docs/README.md)
-  * [🔗 APIs](api-docs/apis.md)
-* [Cookbooks](cookbooks/README.md)
-  * [E2ERAG Cookbook](cookbooks/e2erag-cookbook.md)
+* [README](README.md)
+
+## Publishing
+
+* [Open a pull request to increase the \_\_version\_\_ of arcee-py.](publishing/open-a-pull-request-to-increase-the-__version__-of-arcee-py..md)
+* [Create a new release with the same name as the \_\_version\_\_ of arcee-py.](publishing/create-a-new-release-with-the-same-name-as-the-__version__-of-arcee-py..md)
